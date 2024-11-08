@@ -10,40 +10,28 @@ export default function Home() {
   const [error, setError] = useState<string>('');
 
   const fetchRandomNumber = async () => {
+    setLoading(true);
+    setError('');
+    setNumber(null);
+
     try {
-      setLoading(true);
-      setError('');
-      const response = await fetch('https://api.random.org/json-rpc/4/invoke', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          jsonrpc: '2.0',
-          method: 'generateIntegers',
-          params: {
-            apiKey: process.env.RANDOM_API_KEY,
-            n: 1,
-            min: 1,
-            max: 100
-          },
-          id: 1
-        })
-      });
+      const response = await fetch('/api/random/v1');
 
       if (!response.ok) {
-        throw new Error('Network response was not ok. ' + response);
+        throw new Error(`Error: ${response.status}`);
       }
 
-      const data = await response.json();
-      setNumber(data.result.random.data[0]);
+      const data: { number: number } = await response.json();
+      console.log("data.number -- " + data.number);
+      setNumber(data.number);
     } catch (err) {
-      setError('Network response was not ok. ' + err);
-      setNumber(null);
+      setError('Failed to fetch the random number.');
+      console.error(err);
     } finally {
       setLoading(false);
     }
-  }
+  };
+
 
 
 
