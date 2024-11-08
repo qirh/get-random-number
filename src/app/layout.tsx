@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Get random number",
-  description: "Get random number",
+  title: "~Random",
+  description: "Gets random number",
 };
 
 export default function RootLayout({
