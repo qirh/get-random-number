@@ -14,8 +14,8 @@ export async function GET() {
                 params: {
                     apiKey: process.env.RANDOM_API_KEY,
                     n: 1,
-                    min: 1,
-                    max: 1000
+                    min: 200,
+                    max: 300
                 },
                 id: 1
             })
