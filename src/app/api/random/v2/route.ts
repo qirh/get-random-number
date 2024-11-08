@@ -30,7 +30,7 @@ export async function GET() {
 
     } catch (error) {
         return NextResponse.json(
-            { error: 'Failed to generate random number' },
+            { error: 'Failed to generate random number. -- ' + error },
             { status: 500 }
         );
     }
