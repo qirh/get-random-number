@@ -1,3 +1,3 @@
-A quick net app that I wanted to build in order to see how quickly I can develop a simple FE app by using Vercel/Next.
+A quick next app. I built it to test out Vercel API.
 
-Verdict: it's pretty easy!
+Verdict: it's pretty easy to use!

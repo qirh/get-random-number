@@ -80,7 +80,7 @@ export default function Home() {
               checked={useV1 === true}
               onChange={handleRadioChange}
             />
-            v1
+            Use Vercel API (range: 0-100)
           </label>
           <label className="flex items-center">
             <input
@@ -91,7 +91,7 @@ export default function Home() {
               checked={useV1 === false}
               onChange={handleRadioChange}
             />
-            v2
+            Use external API (range: 200-300)
           </label>
         </div>
         <div className="mt-4 text-lg font-medium">
